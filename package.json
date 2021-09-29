@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "cypress:run": "cypress run --browser firefox --record --key $CYPRESS_RECORD_KEY",
+    "cypress:run:local": "cypress run --browser firefox --record false",
+    "cypress:run:headed": "cypress run --browser firefox --record false --headed --no-exit"
+  },
+  "devDependencies": {
+    "cypress": "8.5.0"
+  },
+  "packageManager": "yarn@3.0.2"
+}
