@@ -111,3 +111,8 @@ dist
 
 # Temporary
 tmp/
+
+# Yarn v3
+.yarn/*
+!.yarn/releases/
+
