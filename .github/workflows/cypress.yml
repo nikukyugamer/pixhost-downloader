@@ -1,7 +1,10 @@
+name: Cypress
 on:
   - push
   - workflow_dispatch
-name: Cypress
+env:
+  YARN_CACHE_FOLDER: .cache/yarn
+
 jobs:
   main:
     name: Cypress
@@ -15,6 +18,13 @@ jobs:
         run: |
           lib/github_actions_scripts/install_firefox.sh
           # lib/github_actions_scripts/install_microsoft_edge.sh
+      - uses: actions/cache@v2.1.6
+        with:
+          path: ${YARN_CACHE_FOLDER}
+          key: ${{ runner.os }}-yarn-cache-v1
+      - name: $ yarn install
+        run: |
+          yarn install
       - name: Cypress を実行する
         run: |
           npx cypress run --browser firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}

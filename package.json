@@ -5,6 +5,7 @@
     "cypress:run:headed": "cypress run --browser firefox --record false --headed --no-exit"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.10",
     "cypress": "8.5.0"
   },
   "packageManager": "yarn@3.0.2"

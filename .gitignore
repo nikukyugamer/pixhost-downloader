@@ -110,9 +110,9 @@ dist
 .tern-port
 
 # Temporary
-tmp/
+tmp/*
+!tmp/.keep
 
 # Yarn v3
 .yarn/*
 !.yarn/releases/
-
