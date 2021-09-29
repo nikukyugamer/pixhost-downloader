@@ -69,6 +69,11 @@ describe('PiXhost', () => {
           expect(directImageUrl).to
           .match(/https:\/\/img[0-9]+\.pixhost\.to\/images\/228\/[0-9]+_picturepub-iskra-lawrence-006\.jpg/)
         })
+
+        // 念のため元ファイルのファイル名が取得できることも確認する
+        cy.task('sourceFilename', response).then((filename) => {
+          expect(filename).to.eq('picturepub-iskra-lawrence-006.jpg')
+        })
       })
     })
   })
