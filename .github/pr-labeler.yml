@@ -1,0 +1,11 @@
+機能追加・改修: ['feature/*', 'feat/*']
+修正: 'fix/*'
+CI: 'ci/*'
+軽微な変更: 'chore/*'
+ドキュメント: 'docs/*'
+リファクタリング: '*refactor*'
+導入: '*introduce*'
+Docker: '*docker*'
+AWS: '*aws*'
+GCP: '*gcp*'
+Spec: '*spec*'
