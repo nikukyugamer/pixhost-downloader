@@ -1,0 +1,23 @@
+on:
+  - push
+  # - pull_request
+  - workflow_dispatch
+name: Cypress
+jobs:
+  main:
+    name: Cypress
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Cypress の実行に必要なパッケージをインストールする
+        # .github 配下は Checkout した際に存在しないので、ファイルを切り出す際は他の見える場所に置く
+        run: |
+          lib/github_actions_scripts/install_packages_for_cypress.sh
+      - name: Firefox と Microsoft Edge をインストールする
+        # .github 配下は Checkout した際に存在しないので、ファイルを切り出す際は他の見える場所に置く
+        run: |
+          lib/github_actions_scripts/install_firefox.sh
+          lib/github_actions_scripts/install_microsoft_edge.sh
+      - name: （続きを書く）
+        run: |
+          echo foobar
