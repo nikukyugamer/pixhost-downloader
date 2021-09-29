@@ -5,7 +5,7 @@
     "cypress:run:headed": "cypress run --browser firefox --record false --headed --no-exit"
   },
   "devDependencies": {
-    "cypress": "^8.5.0"
+    "cypress": "8.5.0"
   },
   "packageManager": "yarn@3.0.2"
 }
