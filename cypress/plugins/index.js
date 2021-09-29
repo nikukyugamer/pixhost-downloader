@@ -1,3 +1,12 @@
+const cheerio = require('cheerio');
+
 module.exports = function (on, config) {
-  // configure plugins here
+  // https://docs.cypress.io/faq/questions/using-cypress-faq#How-do-I-require-or-import-node-modules-in-Cypress
+  on('task', {
+    directImageUrlByCheerio(response) {
+      const $ = cheerio.load(response.body)
+
+      return $('#image')[0].attribs.src
+    }
+  })
 }
