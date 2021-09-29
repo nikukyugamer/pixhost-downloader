@@ -2,9 +2,6 @@ name: Cypress
 on:
   - push
   - workflow_dispatch
-env:
-  YARN_CACHE_FOLDER: .cache/yarn
-
 jobs:
   main:
     name: Cypress
@@ -20,8 +17,12 @@ jobs:
           # lib/github_actions_scripts/install_microsoft_edge.sh
       - uses: actions/cache@v2.1.6
         with:
-          path: ${YARN_CACHE_FOLDER}
-          key: ${{ runner.os }}-yarn-cache-v1
+          path: .cache/yarn
+          key: ${{ runner.os }}-yarn-cache-cache-yarn-v1
+      - uses: actions/cache@v2.1.6
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-cache-node-modules-v1
       - name: $ yarn install
         run: |
           yarn install
