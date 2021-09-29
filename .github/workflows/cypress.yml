@@ -28,4 +28,4 @@ jobs:
           yarn install
       - name: Cypress を実行する
         run: |
-          npx cypress run --browser firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+          npx cypress run --parallel --browser firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
