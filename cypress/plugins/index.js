@@ -6,7 +6,12 @@ module.exports = function (on, config) {
     directImageUrlByCheerio(response) {
       const $ = cheerio.load(response.body)
 
-      return $('#image')[0].attribs.src
+      return $('#image')[0].attribs.src.trim()
+    },
+    sourceFilename(response) {
+      const $ = cheerio.load(response.body)
+
+      return $('#show:eq(0)').children('.show-title').children('[data-elem="fixed"]').text().trim()
     }
   })
 }
