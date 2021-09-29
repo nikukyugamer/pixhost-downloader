@@ -296,7 +296,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.0.0-rc.10":
+"cheerio@npm:1.0.0-rc.10":
   version: 1.0.0-rc.10
   resolution: "cheerio@npm:1.0.0-rc.10"
   dependencies:
@@ -1374,7 +1374,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    cheerio: ^1.0.0-rc.10
+    cheerio: 1.0.0-rc.10
     cypress: 8.5.0
   languageName: unknown
   linkType: soft
