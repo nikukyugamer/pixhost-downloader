@@ -7,15 +7,18 @@ categories:
   - title: '機能追加・改修'
     labels:
       - '機能追加・改修'
-  - title: 'Spec'
-    labels:
-      - 'Spec'
   - title: '修正'
     labels:
       - '修正'
-  - title: 'Dependencies'
+  - title: '軽微な変更'
     labels:
-      - 'dependencies'
+      - '軽微な変更'
+  - title: '導入'
+    labels:
+      - '導入'
+  - title: 'Spec'
+    labels:
+      - 'Spec'
   - title: 'リファクタリング'
     labels:
       - 'リファクタリング'
@@ -25,9 +28,6 @@ categories:
   - title: 'ドキュメント'
     labels:
       - 'ドキュメント'
-  - title: '軽微な変更'
-    labels:
-      - '軽微な変更'
   - title: 'Docker'
     labels:
       - 'Docker'
@@ -37,9 +37,10 @@ categories:
   - title: 'GCP'
     labels:
       - 'GCP'
-  - title: '導入'
+  - title: 'Dependencies'
     labels:
-      - '導入'
+      - 'dependencies'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   $CHANGES
+
