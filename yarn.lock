@@ -1044,7 +1044,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ky@npm:^0.28.5":
+"ky@npm:0.28.5":
   version: 0.28.5
   resolution: "ky@npm:0.28.5"
   checksum: 0ae9050941191ee58e3858696e77cdae7272ac32152c0124894aed83c8e5676b3e6ee61e05f00ee396bcfd08c7ff6567b83adcab0f2367a6b7ea517fcec9ca2b
@@ -1383,7 +1383,7 @@ __metadata:
   dependencies:
     cheerio: 1.0.0-rc.10
     cypress: 8.5.0
-    ky: ^0.28.5
+    ky: 0.28.5
   languageName: unknown
   linkType: soft
 
