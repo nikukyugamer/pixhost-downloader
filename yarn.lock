@@ -1281,6 +1281,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pixhost-downloader@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "pixhost-downloader@workspace:."
+  dependencies:
+    cheerio: 1.0.0-rc.10
+    cypress: 8.6.0
+    ky: 0.28.6
+  languageName: unknown
+  linkType: soft
+
 "pretty-bytes@npm:^5.6.0":
   version: 5.6.0
   resolution: "pretty-bytes@npm:5.6.0"
@@ -1376,16 +1386,6 @@ __metadata:
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
   languageName: node
   linkType: hard
-
-"root-workspace-0b6124@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
-  dependencies:
-    cheerio: 1.0.0-rc.10
-    cypress: 8.6.0
-    ky: 0.28.6
-  languageName: unknown
-  linkType: soft
 
 "rxjs@npm:^6.6.7":
   version: 6.6.7
