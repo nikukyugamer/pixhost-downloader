@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "cheerio": "1.0.0-rc.10",
-    "cypress": "8.6.0",
+    "cypress": "8.7.0",
     "ky": "0.28.6"
   },
   "packageManager": "yarn@3.0.2",
