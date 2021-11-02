@@ -7,7 +7,7 @@ jobs:
     name: Cypress
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
       - name: Cypress の実行に必要なパッケージをインストールする
         run: |
           lib/github_actions_scripts/install_packages_for_cypress.sh
