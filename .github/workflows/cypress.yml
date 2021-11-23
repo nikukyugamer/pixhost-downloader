@@ -15,11 +15,11 @@ jobs:
         run: |
           lib/github_actions_scripts/install_firefox.sh
           # lib/github_actions_scripts/install_microsoft_edge.sh
-      - uses: actions/cache@v2.1.6
+      - uses: actions/cache@v2.1.7
         with:
           path: .cache/yarn
           key: ${{ runner.os }}-yarn-cache-cache-yarn-v1
-      - uses: actions/cache@v2.1.6
+      - uses: actions/cache@v2.1.7
         with:
           path: node_modules
           key: ${{ runner.os }}-yarn-cache-node-modules-v1
