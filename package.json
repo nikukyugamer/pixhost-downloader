@@ -1,6 +1,6 @@
 {
   "name": "pixhost-downloader",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "bin": {
     "pixhost_downloader": "bin/cli.js"
   },
