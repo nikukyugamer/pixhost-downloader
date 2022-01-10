@@ -1,12 +1,19 @@
 {
-  "scripts": {
-    "cypress:run": "cypress run --browser firefox --record --key $CYPRESS_RECORD_KEY",
-    "cypress:run:local": "cypress run --browser firefox --record false",
-    "cypress:run:headed": "cypress run --browser firefox --record false --headed --no-exit"
+  "name": "pixhost-downloader",
+  "version": "1.0.0",
+  "bin": {
+    "pixhost_downloader": "bin/cli.js"
   },
   "devDependencies": {
+    "axios": "0.24.0",
     "cheerio": "1.0.0-rc.10",
-    "cypress": "8.5.0"
+    "commander": "^8.3.0",
+    "cypress": "9.2.0"
   },
-  "packageManager": "yarn@3.0.2"
+  "packageManager": "yarn@3.1.1",
+  "scripts": {
+    "cypress:run": "cypress run --browser firefox --record --key $CYPRESS_RECORD_KEY",
+    "cypress:run:headed": "cypress run --browser firefox --record false --headed --no-exit",
+    "cypress:run:local": "cypress run --browser firefox --record false"
+  }
 }
