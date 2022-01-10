@@ -19,6 +19,10 @@ jobs:
         run: |
           echo "::set-output name=hostname::$(hostname)"
           echo "hostname: $(hostname)"
+      - name: ステップ内で定義した変数の確認
+        run: |
+          echo "branch_name: ${{ steps.get_branch_name.outputs.branch_name }}"
+          echo "hostname: ${{ steps.this_environment.outputs.hostname }}"
       - name: （ローカル実行時）$ sudo apt update
         if: ${{ steps.this_environment.outputs.hostname == 'docker-desktop' }}
         run: |
@@ -50,10 +54,10 @@ jobs:
         run: |
           yarn install
       - name: Cypress を実行する（Webにデータを記録する）
-        if: ${{ steps.get_branch_name.outputs.branch == 'main' || steps.get_branch_name.outputs.branch == 'development' }}
+        if: ${{ steps.get_branch_name.outputs.branch_name == 'main' || steps.get_branch_name.outputs.branch_name == 'development' }}
         run: |
           echo "npx cypress run --parallel --browser firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}"
       - name: Cypress を実行する（Webにデータを記録しない）
-        if: ${{ steps.get_branch_name.outputs.branch != 'main' && steps.get_branch_name.outputs.branch != 'development' }}
+        if: ${{ steps.get_branch_name.outputs.branch_name != 'main' && steps.get_branch_name.outputs.branch_name != 'development' }}
         run: |
           echo "npx cypress run --parallel --browser firefox --record false"
