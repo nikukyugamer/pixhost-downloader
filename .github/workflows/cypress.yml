@@ -56,8 +56,8 @@ jobs:
       - name: Cypress を実行する（Webにデータを記録する）
         if: ${{ steps.get_branch_name.outputs.branch_name == 'main' || steps.get_branch_name.outputs.branch_name == 'development' }}
         run: |
-          echo "npx cypress run --parallel --browser firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}"
+          npx cypress run --parallel --browser firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Cypress を実行する（Webにデータを記録しない）
         if: ${{ steps.get_branch_name.outputs.branch_name != 'main' && steps.get_branch_name.outputs.branch_name != 'development' }}
         run: |
-          echo "npx cypress run --parallel --browser firefox --record false"
+          npx cypress run --parallel --browser firefox --record false
