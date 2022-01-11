@@ -1,8 +1,10 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { execSync } = require('child_process')
+const fs = require("fs");
 
 module.exports = pixHostDownloaderClient = (url, saveDirectory = '/tmp') => {
+  const fixedSaveDirectory = saveDirectory.replace(/\/$/, '')
+
   axios.get(url)
   .then((res) => {
     const $ = cheerio.load(res.data)
@@ -12,10 +14,13 @@ module.exports = pixHostDownloaderClient = (url, saveDirectory = '/tmp') => {
 
     console.log(`[LOG] imgUrl: ${imgUrl}`)
     console.log(`[LOG] imgFilename: ${imgFilename}`)
+    console.log('[LOG] fixedSaveDirectory:', fixedSaveDirectory)
 
-    // TODO: wget に依存しているのはあまりイケてない
-    const fixedSaveDirectory = saveDirectory.replace(/\/$/, '')
-    execSync(`wget --quiet ${imgUrl} -O ${fixedSaveDirectory}/${imgFilename}`)
+    const https = require('https');
+    const file = fs.createWriteStream(`${fixedSaveDirectory}/${imgFilename}`);
+    https.get(imgUrl, function(response) {
+      response.pipe(file);
+    });
 
     console.log(`[LOG] ${imgFilename} has been downloaded (${fixedSaveDirectory}/${imgFilename}).`)
   })
