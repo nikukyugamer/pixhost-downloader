@@ -26,7 +26,7 @@ Options:
 
 ### イメージを作成
 - まずはイメージを作成する
-- 266MB と結構大きなサイズなので、ここは見直したい
+- 200MB と結構大きなサイズなので、ここは見直したい
 
 ```bash
 $ git clone https://github.com/nikukyugamer/pixhost-downloader
@@ -64,6 +64,16 @@ $ docker container run --rm -e LOCAL_UID=$(id -u $USER) -e LOCAL_GID=$(id -g $US
 
 ```bash
 $ docker image rm pixhost_downloader:latest
+```
+
+# 使い方（Docker で実行する場合、かつ、イメージはリモートリポジトリからもってくる場合）
+- おそらくこれが一番楽です
+- 「**使い方（Docker で実行する場合、かつ、イメージを自分でビルドする場合）**」の「**コマンドを実行する**」の箇所において、対象のイメージ指定を `ghcr.io/nikukyugamer/pixhost_downloader:latest` に変えるだけです
+- コマンド例は次のとおりです
+  - 条件等は「**使い方（Docker で実行する場合、かつ、イメージを自分でビルドする場合）**」と同じ
+
+```bash
+$ docker container run --rm -e LOCAL_UID=$(id -u $USER) -e LOCAL_GID=$(id -g $USER) -v $HOME/HOZON_SURU_DIRECTORY:/tmp/pixhost_downloader ghcr.io/nikukyugamer/pixhost_downloader:latest -u https://pixhost.to/show/228/126849268_picturepub-iskra-lawrence-006.jpg -d /tmp/pixhost_downloader
 ```
 
 # Cypress
