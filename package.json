@@ -2,13 +2,13 @@
   "name": "pixhost-downloader",
   "version": "1.0.0",
   "bin": {
-    "pixhost_downloader": "bin/cli.js"
+    "pixhost_downloader": "bin/pixhost_downloader.js"
   },
   "devDependencies": {
     "axios": "0.24.0",
     "cheerio": "1.0.0-rc.10",
-    "commander": "^8.3.0",
-    "cypress": "9.2.0"
+    "commander": "8.3.0",
+    "cypress": "9.2.1"
   },
   "packageManager": "yarn@3.1.1",
   "scripts": {
