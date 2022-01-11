@@ -6,6 +6,7 @@
 ```bash
 $ git clone https://github.com/nikukyugamer/pixhost-downloader
 $ cd pixhost-downloader
+$ yarn install
 $ npm link
 $ npx pixhost_downloader -u "https://pixhost.to/show/228/126849268_picturepub-iskra-lawrence-006.jpg" -d "~/"
 ```
