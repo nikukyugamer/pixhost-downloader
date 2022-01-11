@@ -1,0 +1,51 @@
+name: GitHub Container Registry にイメージをプッシュする（手動）
+on:
+  - workflow_dispatch
+env:
+  TZ: '/usr/share/zoneinfo/Asia/Tokyo'
+  IMAGE_NAME: pixhost_downloader
+jobs:
+  build_and_push:
+    name: Docker のイメージをビルドして GitHub Container Registry にプッシュする（手動）
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Git のタグ名 (vX.Y.Z) を Docker 用のタグ名 (X.Y.Z) に変換して変数に保存する
+        id: set_docker_tag_variable
+        run: |
+          GIT_TAG=$(git describe --tags --abbrev=0)
+          DOCKER_TAG="${GIT_TAG//v/}"
+          echo "::set-output name=docker_tag::${DOCKER_TAG}"
+      - name: GitHub Container Registry にログインする
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: hostname の確認
+        id: this_hostname
+        run: |
+          echo "::set-output name=hostname::$(hostname)"
+      - name: イメージをビルドして GitHub Container Registry にプッシュする
+        if: ${{ steps.this_hostname.outputs.hostname != 'docker-desktop' }} # act でローカル実行した場合は push しない
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          path: Dockerfile
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.set_docker_tag_variable.outputs.docker_tag }}
+      - name: CI 成功時に実行される Step
+        if: success()
+        run: |
+          echo '[LOG] Docker イメージ のプッシュに成功しました'
+      - name: CI 失敗時に実行される Step
+        if: failure()
+        run: |
+          echo '[LOG] Docker イメージ のプッシュに失敗しました'
