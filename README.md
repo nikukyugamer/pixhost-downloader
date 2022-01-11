@@ -2,6 +2,7 @@
 - PiXhost downloader
 
 # 使い方（ローカルで実行する場合）
+- 実行するだけの場合にも Cypress が入って `$ yarn install` に時間がかかるのは何とかしたい
 
 ```bash
 $ git clone https://github.com/nikukyugamer/pixhost-downloader
