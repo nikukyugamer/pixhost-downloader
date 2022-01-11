@@ -1257,7 +1257,7 @@ __metadata:
     commander: 8.3.0
     cypress: 9.2.0
   bin:
-    pixhost_downloader: bin/cli.js
+    pixhost_downloader: bin/pixhost_downloader.js
   languageName: unknown
   linkType: soft
 
