@@ -2,13 +2,17 @@ FROM alpine:3.15.0 as cli
 
 WORKDIR /tmp
 
-RUN apk --no-cache add curl \
-    && curl -LO https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz \
-    && tar xvf node-v16.13.1-linux-x64.tar.xz \
-    && mv node-v16.13.1-linux-x64 node \
-    && curl -LO https://github.com/tianon/gosu/releases/download/1.14/gosu-amd64 \
-    && chmod +x gosu-amd64 \
-    && mv gosu-amd64 gosu
+RUN NODE_VERSION=16.13.1 \
+    && GOSU_VERSION=1.14 \
+    && apk --no-cache add curl \
+    && ARCHITECTURE=$(arch | sed s/aarch64/arm64/ | sed s/x86_64/x64/) \
+    && curl -LO https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCHITECTURE.tar.xz \
+    && tar xvf node-v$NODE_VERSION-linux-$ARCHITECTURE.tar.xz \
+    && mv node-v$NODE_VERSION-linux-$ARCHITECTURE node \
+    && ARCHITECTURE=$(arch | sed s/aarch64/arm64/ | sed s/x86_64/amd64/) \
+    && curl -LO https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$ARCHITECTURE \
+    && chmod +x gosu-$ARCHITECTURE \
+    && mv gosu-$ARCHITECTURE gosu
 
 FROM ubuntu:20.04
 
