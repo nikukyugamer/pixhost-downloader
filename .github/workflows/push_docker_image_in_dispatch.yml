@@ -47,8 +47,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.set_docker_tag_variable.outputs.docker_tag }}
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.set_docker_tag_variable.outputs.docker_tag }}-dispatch
       - name: CI 成功時に実行される Step
         if: success()
         run: |
