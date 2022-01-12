@@ -1,6 +1,11 @@
 name: GitHub Container Registry にイメージをプッシュする（手動）
 on:
-  - workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      suffix_tag:
+        description: 'Dockerイメージに付与するタグの接尾語'
+        required: false
+        default: 'dispatch'
 env:
   TZ: '/usr/share/zoneinfo/Asia/Tokyo'
   IMAGE_NAME: pixhost_downloader
@@ -47,7 +52,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.set_docker_tag_variable.outputs.docker_tag }}-dispatch
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.set_docker_tag_variable.outputs.docker_tag }}-${{ github.event.inputs.suffix_tag }}
       - name: CI 成功時に実行される Step
         if: success()
         run: |
