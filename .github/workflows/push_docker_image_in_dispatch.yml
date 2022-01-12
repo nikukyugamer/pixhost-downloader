@@ -15,11 +15,16 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: QEMU のセットアップ（マルチアーキテクチャビルド用）
+        uses: docker/setup-qemu-action@v1.2.0
+      - name: Buildx のセットアップ（マルチアーキテクチャビルド用）
+        uses: docker/setup-buildx-action@v1.6.0
       - name: Git のタグ名 (vX.Y.Z) を Docker 用のタグ名 (X.Y.Z) に変換して変数に保存する
         id: set_docker_tag_variable
         # git fetch --prune --unshallow しないと main ブランチを持ってきてくれず、タグが取得できない
         run: |
           git fetch --prune --unshallow
+          git switch -c main origin/main
           GIT_TAG=$(git describe --tags --abbrev=0)
           DOCKER_TAG="${GIT_TAG//v/}"
           echo "::set-output name=docker_tag::${DOCKER_TAG}"
@@ -38,11 +43,11 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          path: Dockerfile
+          file: Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.set_docker_tag_variable.outputs.docker_tag }}
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.set_docker_tag_variable.outputs.docker_tag }}-dispatch
       - name: CI 成功時に実行される Step
         if: success()
         run: |
