@@ -39,12 +39,16 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: hostname の確認
-        id: this_hostname
+      - name: GitHub Actions が act で実行されているかどうかの確認
+        id: check_on_act_or_not
+        # /opt/hostedtoolcache は act のイメージにしか存在しないことを前提としている
         run: |
-          echo "::set-output name=hostname::$(hostname)"
+          OPT_DIRECTORY_LIST=$(/bin/ls /opt)
+          if [[ "$OPT_DIRECTORY_LIST" =~ hostedtoolcache ]]; then IS_EXECUTION_ON_ACT="TRUE"; else IS_EXECUTION_ON_ACT="FALSE"; fi
+
+          echo "::set-output name=is_execution_on_act::${IS_EXECUTION_ON_ACT}"
       - name: イメージをビルドして GitHub Container Registry にプッシュする
-        if: ${{ steps.this_hostname.outputs.hostname != 'docker-desktop' }} # act でローカル実行した場合は push しない
+        if: ${{ steps.check_on_act_or_not.outputs.is_execution_on_act != 'TRUE' }} # act でローカル実行した場合は push しない
         uses: docker/build-push-action@v2
         with:
           context: .
