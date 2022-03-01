@@ -7,7 +7,7 @@ jobs:
     name: Cypress
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3.0.0
       - name: プッシュされたブランチ名を取得する
         id: get_branch_name
         run: |
