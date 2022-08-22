@@ -42,11 +42,11 @@ jobs:
       # - name: Microsoft Edge をインストールする
       #   run: |
       #     lib/github_actions_scripts/install_microsoft_edge.sh
-      - uses: actions/cache@v3.0.7
+      - uses: actions/cache@v3.0.8
         with:
           path: .cache/yarn
           key: ${{ runner.os }}-yarn-cache-cache-yarn-v1
-      - uses: actions/cache@v3.0.7
+      - uses: actions/cache@v3.0.8
         with:
           path: node_modules
           key: ${{ runner.os }}-yarn-cache-node-modules-v1
