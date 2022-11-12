@@ -1,4 +1,4 @@
-FROM alpine:3.16.2 as cli
+FROM alpine:3.16.3 as cli
 
 WORKDIR /tmp
 
