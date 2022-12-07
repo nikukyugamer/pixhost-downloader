@@ -478,9 +478,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:12.0.0":
-  version: 12.0.0
-  resolution: "cypress@npm:12.0.0"
+"cypress@npm:12.0.1":
+  version: 12.0.1
+  resolution: "cypress@npm:12.0.1"
   dependencies:
     "@cypress/request": ^2.88.10
     "@cypress/xvfb": ^1.2.4
@@ -526,7 +526,7 @@ __metadata:
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: 29b65662d466e6bc0598c66f0fe6f0572b147bd160c53ae2d09d1ff9825db697a4896f9f6885e9ef1eb075d21181aad375d67b69a297450756b1b1c0cfbac356
+  checksum: 07f7d61b6fc1fc5ef9e2672b36da3e3b0fcf5996a5e0786b548f370ec23ce908b5a6de4132db73110f48c32132db3e7ff31d176d0ed83c63fd09709ff3c982e2
   languageName: node
   linkType: hard
 
@@ -1302,7 +1302,7 @@ __metadata:
     axios: 0.27.2
     cheerio: 1.0.0-rc.11
     commander: 9.4.0
-    cypress: 12.0.0
+    cypress: 12.0.1
   bin:
     pixhost_downloader: bin/pixhost_downloader.js
   languageName: unknown
