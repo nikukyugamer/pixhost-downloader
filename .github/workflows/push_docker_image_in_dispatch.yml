@@ -23,7 +23,7 @@ jobs:
       - name: QEMU のセットアップ（マルチアーキテクチャビルド用）
         uses: docker/setup-qemu-action@v2.2.0
       - name: Buildx のセットアップ（マルチアーキテクチャビルド用）
-        uses: docker/setup-buildx-action@v2.6.0
+        uses: docker/setup-buildx-action@v2.7.0
       - name: Git のタグ名 (vX.Y.Z) を Docker 用のタグ名 (X.Y.Z) に変換して変数に保存する
         id: set_docker_tag_variable
         # git fetch --prune --unshallow しないと main ブランチを持ってきてくれず、タグが取得できない
