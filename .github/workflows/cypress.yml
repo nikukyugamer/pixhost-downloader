@@ -7,7 +7,7 @@ jobs:
     name: Cypress
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: プッシュされたブランチ名を取得する
         id: get_branch_name
         run: |
@@ -42,11 +42,11 @@ jobs:
       # - name: Microsoft Edge をインストールする
       #   run: |
       #     lib/github_actions_scripts/install_microsoft_edge.sh
-      - uses: actions/cache@v3.3.1
+      - uses: actions/cache@v3.3.2
         with:
           path: .cache/yarn
           key: ${{ runner.os }}-yarn-cache-cache-yarn-v1
-      - uses: actions/cache@v3.3.1
+      - uses: actions/cache@v3.3.2
         with:
           path: node_modules
           key: ${{ runner.os }}-yarn-cache-node-modules-v1
