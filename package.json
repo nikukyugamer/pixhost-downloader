@@ -5,12 +5,12 @@
     "pixhost_downloader": "bin/pixhost_downloader.js"
   },
   "devDependencies": {
-    "axios": "0.24.0",
-    "cheerio": "1.0.0-rc.10",
-    "commander": "8.3.0",
-    "cypress": "9.2.1"
+    "axios": "1.6.2",
+    "cheerio": "1.0.0-rc.12",
+    "commander": "11.1.0",
+    "cypress": "13.6.0"
   },
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@4.0.2",
   "scripts": {
     "cypress:run": "cypress run --browser firefox --record --key $CYPRESS_RECORD_KEY",
     "cypress:run:headed": "cypress run --browser firefox --record false --headed --no-exit",
