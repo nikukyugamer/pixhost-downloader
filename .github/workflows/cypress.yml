@@ -36,7 +36,7 @@ jobs:
       - name: Cypress の実行に必要なパッケージをインストールする
         run: |
           lib/github_actions_scripts/install_packages_for_cypress.sh
-      - name: Firefox をインストールする
+      - name: Firefox をインストールする (/snap/bin/firefox)
         run: |
           lib/github_actions_scripts/install_firefox.sh
           which firefox
@@ -57,8 +57,8 @@ jobs:
       - name: Cypress を実行する（Webにデータを記録する）
         if: ${{ steps.get_branch_name.outputs.branch_name == 'main' || steps.get_branch_name.outputs.branch_name == 'development' }}
         run: |
-          npx cypress run --parallel --browser firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+          npx cypress run --parallel --browser /snap/bin/firefox --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Cypress を実行する（Webにデータを記録しない）
         if: ${{ steps.get_branch_name.outputs.branch_name != 'main' && steps.get_branch_name.outputs.branch_name != 'development' }}
         run: |
-          npx cypress run --browser firefox --record false
+          npx cypress run --browser /snap/bin/firefox --record false
