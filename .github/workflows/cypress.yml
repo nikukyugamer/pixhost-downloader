@@ -39,6 +39,7 @@ jobs:
       - name: Firefox をインストールする
         run: |
           lib/github_actions_scripts/install_firefox.sh
+          which firefox
       # - name: Microsoft Edge をインストールする
       #   run: |
       #     lib/github_actions_scripts/install_microsoft_edge.sh
