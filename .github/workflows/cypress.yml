@@ -5,7 +5,7 @@ on:
 jobs:
   main:
     name: Cypress
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: プッシュされたブランチ名を取得する
@@ -39,6 +39,7 @@ jobs:
       - name: Firefox をインストールする
         run: |
           lib/github_actions_scripts/install_firefox.sh
+          which firefox
       # - name: Microsoft Edge をインストールする
       #   run: |
       #     lib/github_actions_scripts/install_microsoft_edge.sh

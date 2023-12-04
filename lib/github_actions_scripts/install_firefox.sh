@@ -2,7 +2,10 @@
 
 # - name: Firefox をインストールする
 #   run: |
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F
-sudo apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu focal main"
+sudo snap remove --purge firefox
+sudo apt remove --autoremove firefox
+sudo add-apt-repository ppa:mozillateam/ppa
+sudo cp lib/github_actions_scripts/99mozillateamppa /etc/apt/preferences.d
+
 sudo apt update
 sudo apt install -y firefox
