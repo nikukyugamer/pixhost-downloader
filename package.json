@@ -5,7 +5,7 @@
     "pixhost_downloader": "bin/pixhost_downloader.js"
   },
   "devDependencies": {
-    "axios": "1.6.7",
+    "axios": "1.6.8",
     "cheerio": "1.0.0-rc.12",
     "commander": "12.0.0",
     "cypress": "13.7.1"
