@@ -14,7 +14,7 @@ RUN NODE_VERSION=16.13.1 \
     && chmod +x gosu-$ARCHITECTURE \
     && mv gosu-$ARCHITECTURE gosu
 
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 COPY --from=cli /tmp/node /opt/node
 COPY --from=cli /tmp/gosu /opt/cli/gosu
