@@ -49,7 +49,7 @@ jobs:
           echo "::set-output name=is_execution_on_act::${IS_EXECUTION_ON_ACT}"
       - name: イメージをビルドして GitHub Container Registry にプッシュする
         if: ${{ steps.check_on_act_or_not.outputs.is_execution_on_act != 'TRUE' }} # act でローカル実行した場合は push しない
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: Dockerfile
