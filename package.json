@@ -8,7 +8,7 @@
     "axios": "1.7.5",
     "cheerio": "1.0.0",
     "commander": "12.1.0",
-    "cypress": "13.13.3"
+    "cypress": "13.14.0"
   },
   "packageManager": "yarn@4.4.1",
   "scripts": {
