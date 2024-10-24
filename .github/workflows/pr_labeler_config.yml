@@ -7,7 +7,7 @@ on:
 jobs:
   pr-labeler:
     name: PR Labeler
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     # runs-on: self-hosted
     steps:
       # https://github.com/TimonVS/pr-labeler-action
