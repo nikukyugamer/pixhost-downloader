@@ -10,7 +10,7 @@
     "commander": "12.1.0",
     "cypress": "13.16.0"
   },
-  "packageManager": "yarn@4.5.2",
+  "packageManager": "yarn@4.5.3",
   "scripts": {
     "cypress:run": "cypress run --browser firefox --record --key $CYPRESS_RECORD_KEY",
     "cypress:run:headed": "cypress run --browser firefox --record false --headed --no-exit",
