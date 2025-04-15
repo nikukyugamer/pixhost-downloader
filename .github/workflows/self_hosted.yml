@@ -6,10 +6,10 @@ name: On self-hosted Runners
 jobs:
   main:
     name: On self-hosted Runners
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     # runs-on: self-hosted
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: 'TODO: ジョブを書く'
         run: |
           echo 'グローバルにマシン環境を汚すものは self-hosted に適していない'
