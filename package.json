@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "axios": "1.9.0",
+    "axios": "1.10.0",
     "cheerio": "1.1.0",
     "commander": "14.0.0",
     "cypress": "14.4.1"
