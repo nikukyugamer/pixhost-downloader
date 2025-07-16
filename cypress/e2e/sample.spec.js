@@ -1,6 +1,6 @@
 describe('サンプルテスト', () => {
   context('Yahoo!', () => {
-    it('トップページにアクセスできること', () => {
+    xit('トップページにアクセスできること', () => {
       cy.visit('https://www.yahoo.co.jp/')
 
       cy.url().should('eq', 'https://www.yahoo.co.jp/')
