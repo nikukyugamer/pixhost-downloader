@@ -23,10 +23,9 @@ jobs:
         run: |
           echo "branch_name: ${{ steps.get_branch_name.outputs.branch_name }}"
           echo "hostname: ${{ steps.this_environment.outputs.hostname }}"
-      - name: （ローカル実行時）$ sudo apt update
-        if: ${{ steps.this_environment.outputs.hostname == 'docker-desktop' }}
+      - name: $ sudo apt update
         run: |
-          sudo apt update
+          sudo apt-get update
       - name: （ローカル実行時）Node.js と Yarn をインストールする
         if: ${{ steps.this_environment.outputs.hostname == 'docker-desktop' }}
         run: |
