@@ -269,14 +269,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.14.0":
-  version: 1.14.0
-  resolution: "axios@npm:1.14.0"
+"axios@npm:1.14.1":
+  version: 1.14.1
+  resolution: "axios@npm:1.14.1"
   dependencies:
     follow-redirects: "npm:^1.15.11"
     form-data: "npm:^4.0.5"
+    plain-crypto-js: "npm:^4.2.1"
     proxy-from-env: "npm:^2.1.0"
-  checksum: 10c0/2541f4aa215a7d1842429dad006fc682d82bc0e74bd14500823f7d8cce3bbae0e0a8c328c8538946718f366ab8ce5a4c12e9ad40e5a0f3482ff8bff0cd115d45
+  checksum: 10c0/2f45cfa0268a88f2d8a9aadec9c220d2e446579da97f5475cbd379a1a26293b4eed828e3eaec59c0c3b5ffb409f88f76299efa58406e96c5a9b8dd140e7ae254
   languageName: node
   linkType: hard
 
@@ -1503,7 +1504,7 @@ __metadata:
   resolution: "pixhost-downloader@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^2.0.0"
-    axios: "npm:1.14.0"
+    axios: "npm:1.14.1"
     cheerio: "npm:1.2.0"
     commander: "npm:14.0.3"
     cypress: "npm:15.13.0"
@@ -1511,6 +1512,13 @@ __metadata:
     pixhost_downloader: bin/pixhost_downloader.js
   languageName: unknown
   linkType: soft
+
+"plain-crypto-js@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "plain-crypto-js@npm:4.2.1"
+  checksum: 10c0/447582c3da09fd2f429d6f0249679815cc0bdc9968dc301b90aa64b2921709b6031241560e3be9e9423a524f36dd5681f96538c98d0c99bb308b1b42cec6c6af
+  languageName: node
+  linkType: hard
 
 "pretty-bytes@npm:^5.6.0":
   version: 5.6.0
