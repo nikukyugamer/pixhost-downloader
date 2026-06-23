@@ -9,7 +9,7 @@
     "axios": "1.18.1",
     "cheerio": "1.2.0",
     "commander": "15.0.0",
-    "cypress": "15.17.0"
+    "cypress": "15.18.0"
   },
   "packageManager": "yarn@4.13.0",
   "scripts": {
