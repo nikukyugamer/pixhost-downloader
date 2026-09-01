@@ -550,9 +550,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:15.21.0":
-  version: 15.21.0
-  resolution: "cypress@npm:15.21.0"
+"cypress@npm:16.0.0":
+  version: 16.0.0
+  resolution: "cypress@npm:16.0.0"
   dependencies:
     "@cypress/request": "npm:^4.0.0"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -570,7 +570,7 @@ __metadata:
     cli-table3: "npm:0.6.1"
     commander: "npm:^6.2.1"
     common-tags: "npm:^1.8.0"
-    dayjs: "npm:^1.10.4"
+    dayjs: "npm:^1.11.23"
     debug: "npm:^4.3.4"
     eventemitter2: "npm:6.4.7"
     execa: "npm:4.1.0"
@@ -595,7 +595,7 @@ __metadata:
     yauzl: "npm:^3.3.1"
   bin:
     cypress: bin/cypress
-  checksum: 10c0/96f76fd57c3362619613f1e5da18f9c3e93686b80707bf4142f6d8ddca926110d622843463085d699dcb7f6db2532ec89854a8337694b971cdc7e86b4f5af4d0
+  checksum: 10c0/c506208f683f9e003686fa14597a2e5d97c8d9e8a71a7a7ea0fc6979da8375d0d2d401a9b1895535bb0ad7e54619e3f79c6cbf0fbce23715939095b8933e5ba8
   languageName: node
   linkType: hard
 
@@ -608,10 +608,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.10.4":
-  version: 1.10.7
-  resolution: "dayjs@npm:1.10.7"
-  checksum: 10c0/2ce908776ea5b383dba2c01c72290ff12ad97cafa81b9c72a9cc4f801d736d592f20bd992ea1dff083ab80e807080b5af21f634bb09e67f89f66582a9059053a
+"dayjs@npm:^1.11.23":
+  version: 1.11.23
+  resolution: "dayjs@npm:1.11.23"
+  checksum: 10c0/69ab04bf19c676e44ab50cc2fca223d265f3dafd107151ef3b0f3ad74d360c37caa602abe62f87cb25d90bd9f6bee003698af47df5b0dbf10a998b7b5f3bb3f1
   languageName: node
   linkType: hard
 
@@ -1512,7 +1512,7 @@ __metadata:
     axios: "npm:1.19.0"
     cheerio: "npm:1.2.0"
     commander: "npm:15.0.0"
-    cypress: "npm:15.21.0"
+    cypress: "npm:16.0.0"
   bin:
     pixhost_downloader: bin/pixhost_downloader.js
   languageName: unknown
